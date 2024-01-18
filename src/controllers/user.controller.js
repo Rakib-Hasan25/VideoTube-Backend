@@ -3,6 +3,7 @@ import { ApiError } from "../utils/ApiError.js";
 import{User} from "../models/user.model.js"
 import{uploadOnCloudinary} from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
+
 const registerUser = asyncHandler(async(req,res)=>{
     //1st: get user details from frontend
     //2nd: validation - not empty
@@ -42,7 +43,7 @@ const registerUser = asyncHandler(async(req,res)=>{
 
     //User.findOne({username});
 
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
         $or:[
             { username }, { email }
         ]
@@ -66,6 +67,8 @@ const registerUser = asyncHandler(async(req,res)=>{
     */
 
     const avatarLocalPath = req.files?.avatar[0]?.path
+    console.log("afdsf",req.files?.avatar[0]?.path)
+    
 
     /*
         ->in req.files.avatar 
@@ -75,7 +78,19 @@ const registerUser = asyncHandler(async(req,res)=>{
         in here we just extract the path
 
     */
-        const coverImageLocalPath = req.files?.coverImage[0]?.path
+        // const coverImageLocalPath = req.files?.coverImage[0]?.path
+
+        
+
+        // checking coverimage is given or not 
+
+        let coverImageLocalPath
+        if(req.files && Array.isArray(req.files.coverImage) 
+            && req.files.coverImage.length > 0){
+                coverImageLocalPath = req.files.coverImage[0].path;
+        }
+        // console.log("coverimage", req.files.coverImage)
+        
 
         if(!avatarLocalPath){
             throw new ApiError(400,"Avatar file is required")
@@ -88,24 +103,23 @@ const registerUser = asyncHandler(async(req,res)=>{
         const avater = await uploadOnCloudinary(avatarLocalPath)
         const coverImage= await uploadOnCloudinary(coverImageLocalPath)
 
-        if(!avatarLocalPath){
+        if(!avater){
             throw new ApiError(400,"Avatar file is required")
         }
 
-
+        // console.log("asfasdfffsddf", avater.url)
 
         //6th step
 
        // we just upload the the user in database
         const user= await User.create({
             fullName,
-            avatar:avater.path,//here we previously checked avatar 
-            coverImage:coverImage?.path || "",//here we haven't checked cover image 
+            avatar:avater.url,//here we previously checked avatar 
+            coverImage:coverImage?.url || "",//here we haven't checked cover image 
             //so it can be null
             email,
             password,
             username:username.toLowerCase(),
-
 
         })
 
@@ -120,7 +134,7 @@ const registerUser = asyncHandler(async(req,res)=>{
 
 
        const createdUser=  await User.findById(user._id).select(
-                "-password -refresh token"
+                "-password -refreshToken"
        )
 
        if(!createdUser){
@@ -130,7 +144,7 @@ const registerUser = asyncHandler(async(req,res)=>{
        //8th step
 
        return res.status(201).json(
-        new ApiResponse(200,createdUser,"user registration successful")
+        new ApiResponse(200, createdUser, "user registration successfully")
        )
 })
 export {registerUser};

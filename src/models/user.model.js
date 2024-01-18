@@ -34,13 +34,12 @@ const userSchema = new mongoose.Schema({
         required: true,
      
     },
-    avatar:{
+    coverImage:{
         type: String,// cloudinary url
-        required: true,
     },
     watchHistory:[
         {
-            type:Schema.Types.ObjectId,
+            type:mongoose.Schema.Types.ObjectId,
             ref: "Video"
         }
     ],
