@@ -3,11 +3,6 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken"
 import { User } from "../models/user.model.js";
 
-
-
-
-
-
 export const verifyJWT = asyncHandler(async(req, _ , next)=>{
 
   try {
@@ -34,8 +29,6 @@ export const verifyJWT = asyncHandler(async(req, _ , next)=>{
       const user = await User.findById(decodedToken?._id)
       .select("-password -refreshToken")
       //we extract the _id of the user and find user by that _id
-  
-  
   
   
       if(!user){
