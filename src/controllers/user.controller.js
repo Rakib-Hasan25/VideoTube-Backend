@@ -4,6 +4,36 @@ import{User} from "../models/user.model.js"
 import{uploadOnCloudinary} from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
+
+
+const generateAccessandRefreshTokens = async(userId)=>{
+    try{
+        const user = await User.findById(userId)
+       const accessToken= user.generateAccessToken()
+       const refreshToken= user.generateRefreshToken() 
+
+
+
+       user.refreshToken= refreshToken;
+       //"user" is a object , which we find from database
+       //so in user.model we have refreshtoken
+       // we just update or insert the refresh token
+       await user.save({validateBeforeSave:false})
+       //while saving refresh token we don't want any 
+       //validatation like ("password , username exists or not")
+       // so we just tell validationBeforeSave should be false
+
+
+       return {accessToken:accessToken, refreshToken:refreshToken}
+
+    }
+    catch(error){
+        throw new ApiError(500,
+            "Something went wrong while generating access and refresh tokens")
+    }
+
+}
+
 const registerUser = asyncHandler(async(req,res)=>{
     //1st: get user details from frontend
     //2nd: validation - not empty
@@ -147,4 +177,140 @@ const registerUser = asyncHandler(async(req,res)=>{
         new ApiResponse(200, createdUser, "user registration successfully")
        )
 })
-export {registerUser};
+
+
+
+const loginUser = asyncHandler(async(req,res)=>{
+    //from req.body we have to extract the data
+    // username and password
+    // find the user
+    // check the password
+    //geneate the access token and refresh token
+    // send cookies with response
+
+    //1st and 2nd step
+    const {email,username,password} = req.body
+    console.log("email ",email)
+
+    if(!username && ! email){
+        throw new ApiError(400, "user name and email are required")
+    }
+
+
+//3rd step
+   const user =  await User.findOne({
+     $or:[{username},{email}]  
+    })
+
+
+    if(!user){
+        throw new ApiError(404, "user is not found")
+    }
+
+    // console.log("user : ",user)
+
+
+
+    //4th step
+
+    const isPasswordValid = await user.isPasswordCorrect(password)
+    //"password" which the user just entered and "user" is the data
+    // which we find from database when we searching from the User
+
+    //user.isPasswordCorrect() this function is defined on user.model
+    //for this reason we can use it
+
+    if(!isPasswordValid){
+        throw new ApiError(401, "Invaild user credentials")
+    }
+
+
+    const {accessToken,refreshToken}=await generateAccessandRefreshTokens(user._id);
+    // for the user 
+    // which we find from database, we just pass his id
+
+    // console.log("accessToken : ", accessToken)
+
+
+
+   const loggedInUser= await User.findById(user._id).select("-password -refreshToken")
+
+
+
+    // console.log("loggedInuser : ", loggedInUser)
+   
+
+
+   const options={
+    httpOnly:true,
+    secure:true,
+   }
+   // by default our cookies can be modified by frontend 
+   // but now only the backend/server can modify the cookies
+
+   return res
+   .status(200)
+   .cookie("accessToken",accessToken,options)
+   .cookie("refreshToken",refreshToken,options)
+   .json(
+    new ApiResponse(200,{
+        user:loggedInUser,
+        accessToken,
+        refreshToken
+    },
+    "user logged in successfully"
+    
+    )
+   )
+   //here .cookie we can use beacause we use cookie-parser package
+   //here, in json response we also send the access token and refresh token
+   //frontend developer might need to save it in local storage , mostly needed
+   // for appdeveloper
+
+})
+
+
+
+const logoutUser =asyncHandler(async (req, res) => {
+// remove the refresh token from the database
+
+    await User.findByIdAndUpdate(
+        req.user._id,{
+            $set:{
+                refreshToken:undefined
+            },
+        },
+        {
+            new: true,
+        }
+        //new:true means "User.findbyIdUpdate()"  return a response
+        //which gives us the  user data but now we will get the updated data,
+        //means user refresh token will be undefined
+    )
+    // we get req.user._id because we define a middleware 
+    // and this middleware insert a new object can 'user'
+    //in the 'req'
+
+
+
+
+
+
+
+    //remove cookies from the user which we give him
+
+
+    const options={
+        httpOnly:true,
+        secure:true,
+       }
+
+
+       return res.status(200)
+       .clearCookie("accessToken", options)
+       .clearCookie("refreshToken",options).json(
+        new ApiResponse(200,{}, "User logged out")
+       )
+
+})
+export {registerUser, loginUser, logoutUser};
