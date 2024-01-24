@@ -10,4 +10,4 @@ const  subscriptionSchema = new mongoose.Schema({
         ref:'User'
     }
 });
-export const Subscription = mongoose.Model("Subscription", subscriptionSchema)
+export const Subscription = mongoose.model("Subscription", subscriptionSchema)

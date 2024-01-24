@@ -8,11 +8,15 @@ const videoSchema = new Schema({
         type:String,//cloudinary url
         required: true,
     },
-    thumnail:{
+    thumbnail:{
         type:String,
         required: true,
     },
     title:{
+        type:String,
+        required:true,
+    },
+    description:{
         type:String,
         required:true,
     },
@@ -25,7 +29,7 @@ const videoSchema = new Schema({
         type:Number,
         default:0,
     },
-    idPublished:{
+    isPublished:{
         type:Boolean,
         default:true,
     },
@@ -42,4 +46,4 @@ const videoSchema = new Schema({
 
 videoSchema.plugin(mongooseAggregatePaginate)
 
-export const Video = mongoose.model('Video', VideoSchema);
+export const Video = mongoose.model('Video', videoSchema);
