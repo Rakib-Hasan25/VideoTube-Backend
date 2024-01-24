@@ -57,6 +57,7 @@ const publishAVideo = asyncHandler(async (req,res)=>{
         videoFile: uploadedVideo?.url || "",
         thumbnail:uploadedThumbnail?.url || "",
         title:title,
+        videoUploader:req.user._id,
         description:description,
         duration:uploadedVideo?.duration ||""
     })

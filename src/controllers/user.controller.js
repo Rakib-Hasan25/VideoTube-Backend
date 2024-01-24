@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import{User} from "../models/user.model.js"
@@ -541,10 +542,10 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
             {
                 $addFields:{
                     subscriberCount:{
-                        $size:"subscribersOfThisChannel"
+                        $size: "$subscribersOfThisChannel"
                     },
                     channelSubscribedToCount:{
-                        $size:"subscribedToWhichChannel"
+                        $size: "$subscribedToWhichChannel"
                     },
                     isSubcribed:{
                         $cond:{
@@ -605,7 +606,7 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
             $match:{
                 //_id: req.user._id we can not directly use it because mongoose dosent work 
                 //here so we need to convert it to mongodb objectId
-                _id: new mongoose.Schema.Types.ObjectId(req.user._id)
+                _id: new mongoose.Types.ObjectId(req?.user._id)
             }
         },
         {
@@ -618,9 +619,9 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
                     {
                         $lookup:{
                             from:"users",
-                            localField:"owner",
+                            localField:"videoUploader",
                             foreignField:"_id",
-                            as : "owner",
+                            as : "videoUploader",
                             pipeline:[
                                 {
                                     $project:{
@@ -636,7 +637,7 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
                     {
                         $addFields:{
                             owner:{
-                                $first:"$owner"
+                                $first:"$videoUploader"
                             }
                         }
                     }
@@ -644,6 +645,9 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
             }
         }
     ])
+
+
+
 
     return res
     .status(200)
