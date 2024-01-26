@@ -16,7 +16,7 @@ const  playlistSchema = new mongoose.Schema({
     ],
     owner:{
         type: mongoose.Schema.Types.ObjectId,
-            ref:"Video" 
+        ref:"User" 
     }
 },{timestamps:true});
 export const Playlist = mongoose.model("Playlist", playlistSchema)
