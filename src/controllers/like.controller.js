@@ -31,7 +31,7 @@ const toggleVideoLike = asyncHandler(async (req, res) => {
 
 
     if(videoAvail.length==0) 
-        throw new ApiError(404, `there is no such videod`);
+        throw new ApiError(404, `there is no such videid`);
 
 
         const like = await Like.aggregate([
@@ -104,7 +104,7 @@ const toggleCommentLike = asyncHandler(async (req, res) => {
 
 
     if(commentAvail.length==0) 
-        throw new ApiError(404, `there is no such videod`);
+        throw new ApiError(404, `there is no such comment`);
 
 
         const like = await Like.aggregate([
@@ -119,7 +119,6 @@ const toggleCommentLike = asyncHandler(async (req, res) => {
             const result = await Like.create({
                 comment: commentId,
                 video:null,
-                like:null,
                 likedBy:req?.user?._id
             })
 
@@ -237,7 +236,7 @@ const getLikedVideos = asyncHandler(async (req, res) => {
             $match:{
                 likedBy :new mongoose.Types.ObjectId(req?.user?._id),
                 comment:null,
-                tweet:null
+                // tweet:null
             }
         }
     ])
@@ -249,7 +248,7 @@ const getLikedVideos = asyncHandler(async (req, res) => {
     }
 
     return res.status(200).json(
-        new ApiResponse(200,like.docs, "successfully fetched all the liked videos")
+        new ApiResponse(200,like, "successfully fetched all the liked videos")
     )
 
 })

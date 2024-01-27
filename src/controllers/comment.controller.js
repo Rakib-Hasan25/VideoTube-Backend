@@ -38,7 +38,7 @@ const getVideoComments = asyncHandler(async (req, res) => {
 
 
         const sortOptions = {};
-        sortOptions[createdAt] = -1 
+        sortOptions["createdAt"] = -1 
 
 
 
@@ -128,12 +128,14 @@ const updateComment = asyncHandler(async (req, res) => {
     if(comment.length==0) 
         throw new ApiError(404, `there is no such comment`);
        
-    
+    console.log(comment)
         const result = await Comment.findByIdAndUpdate(
             commentId,
-            { $push: { content: content } },
+            { $set: { content: content } },
             { new: true }
           );
+
+    // console.log(result)
 
 
           return res.status(200).json(
@@ -169,7 +171,7 @@ const deleteComment = asyncHandler(async (req, res) => {
         throw new ApiError(404, `there is no such comment`);
 
 
-        const result = await comment.findByIdAndDelete(commentId);
+        const result = await Comment.findByIdAndDelete(commentId);
 
 
         if (!result){
