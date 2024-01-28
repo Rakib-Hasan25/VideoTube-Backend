@@ -1,0 +1,1858 @@
+{
+	"info": {
+		"_postman_id": "4aa8f280-58df-46b6-9ffe-8f2f45593953",
+		"name": "videotube",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27434149"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullName",
+									"value": "Rakib Hasan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "one@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "one",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/rakib/Desktop/professional/photo_2024-01-18_22-03-38.jpg"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/rakib/Desktop/professional/photo_2024-01-18_22-04-06.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/users/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"statusCode\": 200,\r\n    \"data\": {\r\n        \"_id\": \"65a94d95a6a221dd0f6ad4ff\",\r\n        \"username\": \"rakibhasan\",\r\n        \"email\": \"rakibhasan@gmail.com\",\r\n        \"fullName\": \"Rakib Hasan\",\r\n        \"avatar\": \"http://res.cloudinary.com/dp7tww5zj/image/upload/v1705594257/s76gdfeocam1nboflg4n.jpg\",\r\n        \"coverImage\": \"http://res.cloudinary.com/dp7tww5zj/image/upload/v1705594260/nk8oko9yjwtq6czdqc7o.jpg\",\r\n        \"watchHistory\": [],\r\n        \"createdAt\": \"2024-01-18T16:11:01.044Z\",\r\n        \"updatedAt\": \"2024-01-18T16:11:01.044Z\",\r\n        \"__v\": 0\r\n    },\r\n    \"message\": \"user registration successfully\",\r\n    \"success\": true\r\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/login",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/login",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "refresh-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "refresh-token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/login",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "change-current-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "change-current-password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"rakibhasan@gmail.com\",\r\n    \"username\": \"rakibhasan\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/login",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get -current-user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "get -current-user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "update-account-details",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\":\"rakibhasan\",\r\n    \"email\":\"sfdf@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/update-account-details",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"update-account-details"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update-account-details",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\":\"rakibhasan\",\r\n    \"email\":\"sfdf@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/update-account-details",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"update-account-details"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "update-avatar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/rakib/Desktop/professional/photo_2024-01-18_22-04-06.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/users/update-avatar",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"update-avatar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update-avatar",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/rakib/Desktop/professional/photo_2024-01-18_22-04-06.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/users/update-avatar",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"update-avatar"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "update-cover-image",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/rakib/Desktop/professional/photo_2024-01-18_22-04-06.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/users/update-cover-image",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"update-cover-image"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update-cover-image",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "coverImage",
+											"type": "file",
+											"src": "/C:/Users/rakib/Desktop/professional/photo_2024-01-18_22-04-06.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/users/update-cover-image",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"update-cover-image"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "getUserChannelProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/channel/rakibhasan",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"channel",
+								"rakibhasan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getUserChannelProfile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/channel/rakibhasan",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"channel",
+										"rakibhasan"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "watch-history of user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/watch-history",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"watch-history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "video",
+			"item": [
+				{
+					"name": "publishAVideo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "dummy video",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "a dummmy ",
+									"type": "text"
+								},
+								{
+									"key": "videoFile",
+									"type": "file",
+									"src": "/C:/Users/rakib/Downloads/squirrel_animal_rodent_fur_cute_701.mp4"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/rakib/OneDrive/Pictures/black.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/videos/publishAVideo",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"videos",
+								"publishAVideo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "publishAVideo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "dummy video",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "a dummmy ",
+											"type": "text"
+										},
+										{
+											"key": "videoFile",
+											"type": "file",
+											"src": "/C:/Users/rakib/Downloads/squirrel_animal_rodent_fur_cute_701.mp4"
+										},
+										{
+											"key": "thumbnail",
+											"type": "file",
+											"src": "/C:/Users/rakib/OneDrive/Pictures/black.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/videos/publishAVideo",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"videos",
+										"publishAVideo"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"statusCode\": 200,\r\n    \"data\": {\r\n        \"_id\": \"65af31fdf0e61f14e39a68d6\",\r\n        \"videoFile\": \"http://res.cloudinary.com/dp7tww5zj/video/upload/v1705980410/l06u8snpirrs7uyobjcq.mp4\",\r\n        \"thumbnail\": \"http://res.cloudinary.com/dp7tww5zj/image/upload/v1705980412/kqhejcitdtiunvbbfqwi.jpg\",\r\n        \"title\": \"dummy video\",\r\n        \"description\": \"a dummmy \",\r\n        \"duration\": \"20.720029\",\r\n        \"views\": 0,\r\n        \"isPublished\": true,\r\n        \"createdAt\": \"2024-01-23T03:26:53.426Z\",\r\n        \"updatedAt\": \"2024-01-23T03:26:53.426Z\",\r\n        \"__v\": 0\r\n    },\r\n    \"message\": \"video upload  successfully\",\r\n    \"success\": true\r\n}"
+						}
+					]
+				},
+				{
+					"name": "get video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/videos/getVideos?page=2&limit=2&sortBy=createdAt&sortType=desc",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"videos",
+								"getVideos"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortType",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get video",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/videos/getVideos?page=2&limit=2&sortBy=createdAt&sortType=desc",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"videos",
+										"getVideos"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "sortBy",
+											"value": "createdAt"
+										},
+										{
+											"key": "sortType",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get video by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/videos/65af61e65dc3f084698ba7c4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"videos",
+								"65af61e65dc3f084698ba7c4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get video by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/videos/65af61e65dc3f084698ba7c4",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"videos",
+										"65af61e65dc3f084698ba7c4"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"statusCode\": 200,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"65af61e65dc3f084698ba7c4\",\r\n            \"videoFile\": \"http://res.cloudinary.com/dp7tww5zj/video/upload/v1705992673/abtu59tdxhvncy81mdss.mp4\",\r\n            \"thumbnail\": \"http://res.cloudinary.com/dp7tww5zj/image/upload/v1705992676/hdevbu5s8kceejkdb1ze.png\",\r\n            \"title\": \"dummy videovv\",\r\n            \"description\": \"a dummmy xcv\",\r\n            \"duration\": \"20.720029\",\r\n            \"views\": 0,\r\n            \"isPublished\": true,\r\n            \"createdAt\": \"2024-01-23T06:51:18.041Z\",\r\n            \"updatedAt\": \"2024-01-23T06:51:18.041Z\",\r\n            \"__v\": 0\r\n        }\r\n    ],\r\n    \"message\": \"successfully fetched\",\r\n    \"success\": true\r\n}"
+						}
+					]
+				},
+				{
+					"name": "update video details ",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/rakib/Downloads/DALL·E 2024-01-06 11.41.52 - 1. Stethoscope and a family - icon for General Practitioner. 2. A teddy bear and a small stethoscope - icon for Pediatrician. 3. A heart with pulse li.png"
+								},
+								{
+									"key": "title",
+									"value": "my name ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "oke bye",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/videos/updateVideoDetails/65af61e65dc3f084698ba7c4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"videos",
+								"updateVideoDetails",
+								"65af61e65dc3f084698ba7c4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update video details",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "thumbnail",
+											"type": "file",
+											"src": "/C:/Users/rakib/Downloads/DALL·E 2024-01-06 11.41.52 - 1. Stethoscope and a family - icon for General Practitioner. 2. A teddy bear and a small stethoscope - icon for Pediatrician. 3. A heart with pulse li.png"
+										},
+										{
+											"key": "title",
+											"value": "my name ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "oke bye",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/videos/updateVideoDetails/65af61e65dc3f084698ba7c4",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"videos",
+										"updateVideoDetails",
+										"65af61e65dc3f084698ba7c4"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "delete video ",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/videos/delete/65af61e65dc3f084698ba7c4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"videos",
+								"delete",
+								"65af61e65dc3f084698ba7c4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete video",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/videos/delete/65af61e65dc3f084698ba7c4",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"videos",
+										"delete",
+										"65af61e65dc3f084698ba7c4"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "toggole published status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/videos/toggle/publish/65af31fdf0e61f14e39a68d6",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"videos",
+								"toggle",
+								"publish",
+								"65af31fdf0e61f14e39a68d6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "toggole published status",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/videos/toggle/publish/65af31fdf0e61f14e39a68d6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"videos",
+										"toggle",
+										"publish",
+										"65af31fdf0e61f14e39a68d6"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "subscription",
+			"item": [
+				{
+					"name": "toggle subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/subcription/toggleSubscription/65a94d95a6a221dd0f6ad4ff",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"subcription",
+								"toggleSubscription",
+								"65a94d95a6a221dd0f6ad4ff"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "toggle subscription",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/subcription/toggleSubscription/65a94d95a6a221dd0f6ad4ff",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"subcription",
+										"toggleSubscription",
+										"65a94d95a6a221dd0f6ad4ff"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get all subscriber of a channel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/subcription/getUserChannelSubscribers/65a94d95a6a221dd0f6ad4ff",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"subcription",
+								"getUserChannelSubscribers",
+								"65a94d95a6a221dd0f6ad4ff"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all subscriber of a channel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/subcription/getUserChannelSubscribers/65a94d95a6a221dd0f6ad4ff",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"subcription",
+										"getUserChannelSubscribers",
+										"65a94d95a6a221dd0f6ad4ff"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get all subscribed channel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/subcription/getSubscribedChannels/65a94d95a6a221dd0f6ad4ff",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"subcription",
+								"getSubscribedChannels",
+								"65a94d95a6a221dd0f6ad4ff"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all subscribed channel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/subcription/getSubscribedChannels/65a94d95a6a221dd0f6ad4ff",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"subcription",
+										"getSubscribedChannels",
+										"65a94d95a6a221dd0f6ad4ff"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "playlist",
+			"item": [
+				{
+					"name": "playlist create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"hi\",\r\n    \"description\":\"i am rakib\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/playlist/create",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "playlist create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"hi\",\r\n    \"description\":\"i am rakib\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/playlist/create",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"statusCode\": 200,\r\n    \"data\": {\r\n        \"name\": \"hi\",\r\n        \"description\": \"i am rakib\",\r\n        \"videos\": [],\r\n        \"owner\": \"65b14b5ef622a9e578ada5fc\",\r\n        \"_id\": \"65b1fcb44b177f40caabc769\",\r\n        \"createdAt\": \"2024-01-25T06:16:20.740Z\",\r\n        \"updatedAt\": \"2024-01-25T06:16:20.740Z\",\r\n        \"__v\": 0\r\n    },\r\n    \"message\": \"playlist successfully created\",\r\n    \"success\": true\r\n}"
+						}
+					]
+				},
+				{
+					"name": "getPlaylistById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/65b1fcb44b177f40caabc769",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"65b1fcb44b177f40caabc769"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getPlaylistById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/65b1fcb44b177f40caabc769",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"65b1fcb44b177f40caabc769"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get User Playlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/user/65b14b5ef622a9e578ada5fc",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"user",
+								"65b14b5ef622a9e578ada5fc"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get User Playlists",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/user/65b14b5ef622a9e578ada5fc",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"user",
+										"65b14b5ef622a9e578ada5fc"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "add video in playlist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/add/65b1ff924b177f40caabc776/65b1fcb44b177f40caabc769",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"add",
+								"65b1ff924b177f40caabc776",
+								"65b1fcb44b177f40caabc769"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add video in playlist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/add/65b1ff924b177f40caabc776/65b1fcb44b177f40caabc769",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"add",
+										"65b1ff924b177f40caabc776",
+										"65b1fcb44b177f40caabc769"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "delete video from playlist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/remove/65b1ff924b177f40caabc776/65b1fcb44b177f40caabc769",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"remove",
+								"65b1ff924b177f40caabc776",
+								"65b1fcb44b177f40caabc769"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete video from playlist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/remove/65b1ff924b177f40caabc776/65b1fcb44b177f40caabc769",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"remove",
+										"65b1ff924b177f40caabc776",
+										"65b1fcb44b177f40caabc769"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"statusCode\": 200,\r\n    \"data\": {\r\n        \"_id\": \"65b1fcb44b177f40caabc769\",\r\n        \"name\": \"hi\",\r\n        \"description\": \"i am rakib\",\r\n        \"videos\": [],\r\n        \"owner\": \"65b14b5ef622a9e578ada5fc\",\r\n        \"createdAt\": \"2024-01-25T06:16:20.740Z\",\r\n        \"updatedAt\": \"2024-01-25T06:53:10.661Z\",\r\n        \"__v\": 0\r\n    },\r\n    \"message\": \"successfully insert video on playlist\",\r\n    \"success\": true\r\n}"
+						}
+					]
+				},
+				{
+					"name": "update playlist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"my name is khan\",\r\n    \"description\":\"oke nice\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/playlist/updatePlaylist/65b1fcb44b177f40caabc769",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"updatePlaylist",
+								"65b1fcb44b177f40caabc769"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update playlist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"my name is khan\",\r\n    \"description\":\"oke nice\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/playlist/updatePlaylist/65b1fcb44b177f40caabc769",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"updatePlaylist",
+										"65b1fcb44b177f40caabc769"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"statusCode\": 200,\r\n    \"data\": {\r\n        \"_id\": \"65b1fcb44b177f40caabc769\",\r\n        \"name\": \"my name is khan\",\r\n        \"description\": \"oke nice\",\r\n        \"videos\": [],\r\n        \"owner\": \"65b14b5ef622a9e578ada5fc\",\r\n        \"createdAt\": \"2024-01-25T06:16:20.740Z\",\r\n        \"updatedAt\": \"2024-01-25T06:59:30.828Z\",\r\n        \"__v\": 0\r\n    },\r\n    \"message\": \"playlist details updated successfully\",\r\n    \"success\": true\r\n}"
+						}
+					]
+				},
+				{
+					"name": "playlist deleted",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/65b1fcb44b177f40caabc769",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"65b1fcb44b177f40caabc769"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "playlist deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/65b1fcb44b177f40caabc769",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"65b1fcb44b177f40caabc769"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"statusCode\": 200,\r\n    \"data\": [],\r\n    \"message\": \"playlist deleted successfully\",\r\n    \"success\": true\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "add comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"it is a good video\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/comment/add/65af31fdf0e61f14e39a68d6",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"add",
+								"65af31fdf0e61f14e39a68d6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"it is a good video\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/comment/add/65af31fdf0e61f14e39a68d6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"comment",
+										"add",
+										"65af31fdf0e61f14e39a68d6"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get all comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/comment/65af31fdf0e61f14e39a68d6",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"65af31fdf0e61f14e39a68d6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/comment/65af31fdf0e61f14e39a68d6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"comment",
+										"65af31fdf0e61f14e39a68d6"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"comment is updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/comment/update/65b5269413d92bf6cccb7bc4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"update",
+								"65b5269413d92bf6cccb7bc4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update comment",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"comment is updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/comment/update/65b5269413d92bf6cccb7bc4",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"comment",
+										"update",
+										"65b5269413d92bf6cccb7bc4"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "comment delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/comment/delete/65b5269413d92bf6cccb7bc4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"delete",
+								"65b5269413d92bf6cccb7bc4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "like",
+			"item": [
+				{
+					"name": "toggle like on comment ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/like/toggle/c/65b53964e18cfc91b803022e",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"like",
+								"toggle",
+								"c",
+								"65b53964e18cfc91b803022e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "toggle like on comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/like/toggle/c/65b53964e18cfc91b803022e",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"like",
+										"toggle",
+										"c",
+										"65b53964e18cfc91b803022e"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "toggle like on video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/like/toggle/v/65af31fdf0e61f14e39a68d6",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"like",
+								"toggle",
+								"v",
+								"65af31fdf0e61f14e39a68d6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "like video",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/like/toggle/v/65af31fdf0e61f14e39a68d6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"like",
+										"toggle",
+										"v",
+										"65af31fdf0e61f14e39a68d6"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "remove like",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/like/toggle/v/65af31fdf0e61f14e39a68d6",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"like",
+										"toggle",
+										"v",
+										"65af31fdf0e61f14e39a68d6"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "a user all like video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/like/videos",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"like",
+								"videos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "a user all like video",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/like/videos",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"like",
+										"videos"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "dashboard",
+			"item": [
+				{
+					"name": "dashboard  stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/dashboard/stats",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"dashboard",
+								"stats"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "dashboard  stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/dashboard/stats",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"dashboard",
+										"stats"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "all video uploaded by channel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/dashboard/videos",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"dashboard",
+								"videos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all video uploaded by channel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/dashboard/videos",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"dashboard",
+										"videos"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
