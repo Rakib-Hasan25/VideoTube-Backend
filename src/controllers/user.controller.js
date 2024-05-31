@@ -192,6 +192,8 @@ const loginUser = asyncHandler(async(req,res)=>{
     // send cookies with response
 
     //1st and 2nd step
+    // const {email,username,password} = req.body
+    console.log("hi")
     const {email,username,password} = req.body
     console.log("email ",email)
 
@@ -210,7 +212,7 @@ const loginUser = asyncHandler(async(req,res)=>{
         throw new ApiError(404, "user is not found")
     }
 
-    // console.log("user : ",user)
+    console.log("user : ",user)
 
 
 
@@ -240,7 +242,7 @@ const loginUser = asyncHandler(async(req,res)=>{
 
 
 
-    // console.log("loggedInuser : ", loggedInUser)
+    console.log("loggedInuser : ", loggedInUser)
    
 
 
