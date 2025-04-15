@@ -1,19 +1,19 @@
 ## Table of Contents
-- Overview
-- Tech Stack
-- Key Features
-- Installation
-- Resources
+- [Overview](#overview)
+- [System Architecture](#system-architecture)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [API Testing with Postman](#api-testing-with-postman)
+- [Resources](#resources)
 
 ## Overview
 This project is a robust backend built with ExpressJS and MongoDB, designed to handle a variety of operations for a social media-like platform.
+I built this entire project in public, sharing every step of the development process.
+You can follow along with the complete explanation in this [YouTube playlist](https://www.youtube.com/playlist?list=PLGMuWOX9e5MrXlnQ4tO8t7n3IDTIalRjt).
 
-## Tech Stack:
-- Node.js
-- JavaScript
-- Express.js
-- MongoDB
-- Cloudinary 
+## System Architecture
+![System Architecture](public/temp/diagram-export-4-16-2025-1_01_45-AM.png)
 
 ## Key Features:
 - Manage registration, login, logout, and other user-related functionalities.
@@ -24,6 +24,13 @@ This project is a robust backend built with ExpressJS and MongoDB, designed to h
 - Playlist CRUD operations
 - Subscription Functionality
 
+## Tech Stack:
+- Node.js
+- JavaScript
+- Express.js
+- MongoDB
+- Cloudinary
+  
 ## Installation:
 
 Follow these steps to get the project set up on your local machine:
@@ -55,9 +62,23 @@ Follow these steps to get the project set up on your local machine:
     ```bash
     npm run dev
     ```
+    
+## API Testing with Postman
+
+To make testing the API easier, I've included a ready-to-use Postman collection.
+
+📁 [Download the Postman Collection](./videotube.postman_collection.json)
+
+### How to Use
+
+1. Download the JSON file above.
+2. Open [Postman](https://www.postman.com/).
+3. Click `Import` > `File` and select `videotube.postman_collection.json`.
+4. Start testing the API!
+
+The collection includes all key endpoints with example requests and necessary headers.
 
 ## Resources:
-- Chai Aur Code Youtube
 - MongoDB Aggregation Pipeline
 - Javascript 
 - Packages
