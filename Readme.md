@@ -40,7 +40,7 @@ This project was built in public to demonstrate advanced backend concepts. You c
 
 <div align="center">
   <!-- Ensure you create an 'assets' folder and move your image there -->
-  <img src="./assets/system-architecture.png" alt="System Architecture" width="800">
+  <img src="public/temp/diagram-export-4-16-2025-1_01_45-AM.png" alt="System Architecture" width="800">
 </div>
 
 ---
@@ -154,3 +154,4 @@ This project focuses on advanced backend patterns, including:
   <a href="https://github.com/Rakib-Hasan25">GitHub</a> • 
   <a href="https://www.linkedin.com/in/rakib-hasan-cuet/">LinkedIn</a>
 </div>
+
